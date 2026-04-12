@@ -48,7 +48,7 @@ CREATE TABLE Message (
     SenderID INT,
     ReceiverID INT,
     Content TEXT,
-    Timestamp DATE,
+    Timestamp TIMESTAMP,
     read_status VARCHAR(10),
     FOREIGN KEY (SenderID) REFERENCES User(UserID),
     FOREIGN KEY (ReceiverID) REFERENCES User(UserID)
@@ -62,7 +62,7 @@ CREATE TABLE Notification (
     RelatedMessageID INT,
     notification_type VARCHAR(20),
     Content TEXT,
-    Timestamp DATE,
+    Timestamp TIMESTAMP,
     read_status VARCHAR(10),
     FOREIGN KEY (UserID) REFERENCES User(UserID),
     FOREIGN KEY (RelatedPostID) REFERENCES Post(PostID),
