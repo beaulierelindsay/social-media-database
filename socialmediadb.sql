@@ -137,10 +137,10 @@ INSERT INTO User (UserID, Username, DoB, Phone, Email, DateJoined, Location, Pri
 -- Insert data into the POST table
 INSERT INTO Post (PostID, UserID, PostCaption, MediaURL, PostTimestamp, Location, Visibility) VALUES
 (1, 1, 'litty', 'https://cdn.socialapp.com/posts/1.jpg', '2026-02-01 13:00:00', 'Singapore', 'friends-only'),
-(2, 1, 'look at my cool fit', 'https://cdn.socialapp.com/posts/2.jpg', '2026-07-23 12:04:00', 'United States', 'public'),
-(3, 1, 'beach day', 'https://cdn.socialapp.com/posts/3.jpg', '2025-07-01 07:25:00', 'United States', 'friends-only'),
-(4, 1, 'night out', 'https://cdn.socialapp.com/posts/4.jpg', '2026-03-21 23:00:00', 'United States', 'friends-only'),
-(5, 1, 'wow', 'https://cdn.socialapp.com/posts/5.jpg', '2026-04-05 00:00:00', 'United States', 'private');
+(2, 2, 'look at my cool fit', 'https://cdn.socialapp.com/posts/2.jpg', '2026-07-23 12:04:00', 'United States', 'public'),
+(3, 3, 'beach day', 'https://cdn.socialapp.com/posts/3.jpg', '2025-07-01 07:25:00', 'United States', 'friends-only'),
+(4, 4, 'night out', 'https://cdn.socialapp.com/posts/4.jpg', '2026-03-21 23:00:00', 'United States', 'friends-only'),
+(5, 5, 'wow', 'https://cdn.socialapp.com/posts/5.jpg', '2026-04-05 00:00:00', 'United States', 'private');
 
 
 -- Insert data into COMMENT table
