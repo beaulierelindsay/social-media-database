@@ -6,6 +6,37 @@ CREATE DATABASE socialmedia;
 USE socialmedia;
 
 -- Create the USER table
-CREATE TABLE user (
-   userID INT PRIMARY KEY,
+CREATE TABLE User (
+   UserID INT PRIMARY KEY,    -- Primary Key
+   Username VARCHAR(50),
+   DoB DATE,
+   Phone VARCHAR(15),
+   Email VARCHAR(100),
+   Password VARCHAR(255),
+   DateJoined DATE,
+   Location VARCHAR(50),
+   PrivacySetting VARCHAR(10)
+)
+
+-- Create the POST table
+CREATE TABLE Post (
+   PostID INT PRIMARY KEY,    -- Primary Key
+   UserID INT,                -- Foreign Key
+   PostCaption VARCHAR(255),
+   MediaURL VARCHAR(255),
+   PostTimestamp TIMESTAMP,
+   Location VARCHAR(50),
+   Visibility VARCHAR(10),
+   FOREIGN KEY (UserID) REFERENCES User(UserID)
+)
+
+-- Create the COMMENT table
+CREATE TABLE Comment (
+   CommentID INT PRIMARY KEY,    -- Primary Key
+   PostID INT,                   -- Foreign Key
+   UserID INT,                   -- Foreign Key
+   Content VARCHAR(255),
+   CommentTimestamp TIMESTAMP,
+   FOREIGN KEY (PostID) REFERENCES Post(PostID),
+   FOREIGN KEY (UserID) REFERENCES User(UserID)
 )
