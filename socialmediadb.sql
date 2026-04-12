@@ -67,7 +67,7 @@ CREATE TABLE Notification (
     FOREIGN KEY (RelatedMessageID) REFERENCES Message(MessageID)
 );
 
--- Create the MEDIAGROUP table
+-- Create the GROUP table
 CREATE TABLE MediaGroup (
     GroupID INT PRIMARY KEY,
     CreatorID INT,
@@ -133,20 +133,20 @@ INSERT INTO User (UserID, Username, DoB, Phone, Email, DateJoined, Location, Pri
 (4, 'mattybdeng', '1998-07-12', '718-561-2999', 'mattdeng@gmail.com', '2019-09-18', 'United States', 'private'),
 (5, 'lindsaywowo', '1997-06-29', '347-432-1000', 'lindsaywow@gmail.com', '2017-10-05', 'United States', 'private');
 
--- Insert into MESSAGE table
-INSERT INTO Message (MessageID, SenderID, ReceiverID, Content, Timestamp, read_status) VALUES
-(1, 4, 5, 'Hello, how are you?', '2025-06-01 10:00:00', 'read'),
-(2, 5, 4, 'I am good, thanks! How about you?', '2025-06-01 10:05:00', 'read'),
-(3, 4, 5, 'I am doing well too. Thanks for asking!', '2025-06-01 10:10:00', 'unread'),
-(4, 3, 2, 'Hey, are you coming to the party tonight?', '2025-06-01 11:00:00', 'read'),
-(5, 2, 3, 'Yes, I will be there. Looking forward to it!', '2025-06-01 11:05:00', 'unread');
 
--- Insert into NOTIFICATION table
+-- Insert data into the POST table
+INSERT INTO Post (PostID, UserID, PostCaption, MediaURL, PostTimestamp, Location, Visibility) VALUES
+(1, 1, 'litty', 'https://cdn.socialapp.com/posts/1.jpg', '2026-02-01 13:00:00', 'Singapore', 'friends-only'),
+(2, 1, 'look at my cool fit', 'https://cdn.socialapp.com/posts/2.jpg', '2026-07-23 12:04:00', 'United States', 'public'),
+(3, 1, 'beach day', 'https://cdn.socialapp.com/posts/3.jpg', '2025-07-01 07:25:00', 'United States', 'friends-only'),
+(4, 1, 'night out', 'https://cdn.socialapp.com/posts/4.jpg', '2026-03-21 23:00:00', 'United States', 'friends-only'),
+(5, 1, 'wow', 'https://cdn.socialapp.com/posts/5.jpg', '2026-04-05 00:00:00', 'United States', 'private');
 
--- Insert into MEDIAGROUP table
-INSERT INTO MediaGroup (GroupID, CreatorID, group_name, privacy_setting, date_created) VALUES
-(1, 1, 'Book Club', 'private', '2025-06-01 13:00:00'),
-(2, 2, 'Travel Enthusiasts', 'public', '2025-06-01 13:05:00'),
-(3, 3, 'Food Lovers', 'private', '2025-06-01 13:10:00'),
-(4, 4, 'Fitness Fanatics', 'public', '2025-06-01 13:15:00'),
-(5, 2, 'Movie Buffs', 'private', '2025-06-01 13:20:00');
+
+-- Insert data into COMMENT table
+INSERT INTO Comment (CommentID, PostID, UserID, Content, CommentTimestamp) VALUES
+(1, 3, 1, 'that view is really nice!!', '2025-07-01 16:00:00'),
+(2, 1, 2, 'wow super lit john', '2025-12-30 01:50:00'),
+(3, 4, 5, 'oo fancy drink', '2026-03-23 09:23:00'),
+(4, 4, 3, 'i went to that place too', '2026-04-01 20:09:00'),
+(5, 2, 4, 'fire fit', '2026-07-23 17:19:00');
