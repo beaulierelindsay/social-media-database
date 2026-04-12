@@ -41,7 +41,6 @@ CREATE TABLE Comment (
    FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
 
-
 -- Create the MESSAGE table
 CREATE TABLE Message (
     MessageID INT PRIMARY KEY,
