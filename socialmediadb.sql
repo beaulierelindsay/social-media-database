@@ -111,8 +111,8 @@ CREATE TABLE Like(
    like_timestamp TIMESTAMP,
 
    PRIMARY KEY (like_user_id, like_post_id),
-   FOREIGN KEY (userid) REFERENCES User(UserID),
-   FOREIGN KEY (postid) REFERENCES Post(PostID)
+   FOREIGN KEY (like_user_id) REFERENCES User(UserID),
+   FOREIGN KEY (like_post_id) REFERENCES Post(PostID)
 );
 
 -- CREATE the GROUPMEMBERSHIP table
