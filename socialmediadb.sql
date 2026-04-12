@@ -67,7 +67,7 @@ CREATE TABLE Notification (
     FOREIGN KEY (RelatedMessageID) REFERENCES Message(MessageID)
 );
 
--- Create the GROUP table
+-- Create the MEDIAGROUP table
 CREATE TABLE MediaGroup (
     GroupID INT PRIMARY KEY,
     CreatorID INT,
@@ -133,4 +133,20 @@ INSERT INTO User (UserID, Username, DoB, Phone, Email, DateJoined, Location, Pri
 (4, 'mattybdeng', '1998-07-12', '718-561-2999', 'mattdeng@gmail.com', '2019-09-18', 'United States', 'private'),
 (5, 'lindsaywowo', '1997-06-29', '347-432-1000', 'lindsaywow@gmail.com', '2017-10-05', 'United States', 'private');
 
+-- Insert into MESSAGE table
+INSERT INTO Message (MessageID, SenderID, ReceiverID, Content, Timestamp, read_status) VALUES
+(1, 4, 5, 'Hello, how are you?', '2025-06-01 10:00:00', 'read'),
+(2, 5, 4, 'I am good, thanks! How about you?', '2025-06-01 10:05:00', 'read'),
+(3, 4, 5, 'I am doing well too. Thanks for asking!', '2025-06-01 10:10:00', 'unread'),
+(4, 3, 2, 'Hey, are you coming to the party tonight?', '2025-06-01 11:00:00', 'read'),
+(5, 2, 3, 'Yes, I will be there. Looking forward to it!', '2025-06-01 11:05:00', 'unread');
 
+-- Insert into NOTIFICATION table
+
+-- Insert into MEDIAGROUP table
+INSERT INTO MediaGroup (GroupID, CreatorID, group_name, privacy_setting, date_created) VALUES
+(1, 1, 'Book Club', 'private', '2025-06-01 13:00:00'),
+(2, 2, 'Travel Enthusiasts', 'public', '2025-06-01 13:05:00'),
+(3, 3, 'Food Lovers', 'private', '2025-06-01 13:10:00'),
+(4, 4, 'Fitness Fanatics', 'public', '2025-06-01 13:15:00'),
+(5, 2, 'Movie Buffs', 'private', '2025-06-01 13:20:00');
