@@ -18,7 +18,7 @@ CREATE TABLE Message (
     SenderID INT,
     ReceiverID INT,
     Content TEXT,
-    Timestamp DATETIME,
+    Timestamp DATE,
     read_status VARCHAR(10),
     FOREIGN KEY (SenderID) REFERENCES User(UserID),
     FOREIGN KEY (ReceiverID) REFERENCES User(UserID)
@@ -32,7 +32,7 @@ CREATE TABLE Notification (
     RelatedMessageID INT,
     notification_type VARCHAR(20),
     Content TEXT,
-    Timestamp DATETIME,
+    Timestamp DATE,
     read_status VARCHAR(10),
     FOREIGN KEY (UserID) REFERENCES User(UserID),
     FOREIGN KEY (RelatedPostID) REFERENCES Post(PostID),
@@ -45,6 +45,6 @@ CREATE TABLE Group (
     CreatorID INT,
     group_name VARCHAR(20),
     privacy_setting VARCHAR(10),
-    date_created DATETIME,
+    date_created DATE,
     FOREIGN KEY (CreatorID) REFERENCES User(UserID)
 );
