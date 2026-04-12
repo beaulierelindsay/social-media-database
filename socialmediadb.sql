@@ -12,7 +12,6 @@ CREATE TABLE User (
    DoB DATE,
    Phone VARCHAR(15),
    Email VARCHAR(100),
-   Password VARCHAR(255),
    DateJoined DATE,
    Location VARCHAR(50),
    PrivacySetting VARCHAR(10)
