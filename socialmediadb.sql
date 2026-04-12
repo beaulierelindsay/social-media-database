@@ -16,7 +16,7 @@ CREATE TABLE User (
    DateJoined DATE,
    Location VARCHAR(50),
    PrivacySetting VARCHAR(10)
-)
+);
 
 -- Create the POST table
 CREATE TABLE Post (
@@ -28,7 +28,7 @@ CREATE TABLE Post (
    Location VARCHAR(50),
    Visibility VARCHAR(10),
    FOREIGN KEY (UserID) REFERENCES User(UserID)
-)
+);
 
 -- Create the COMMENT table
 CREATE TABLE Comment (
@@ -39,10 +39,6 @@ CREATE TABLE Comment (
    CommentTimestamp TIMESTAMP,
    FOREIGN KEY (PostID) REFERENCES Post(PostID),
    FOREIGN KEY (UserID) REFERENCES User(UserID)
-)
-CREATE TABLE user (
-   userID INT PRIMARY KEY,
-   
 );
 
 
