@@ -78,3 +78,51 @@ CREATE TABLE Group (
     date_created DATE,
     FOREIGN KEY (CreatorID) REFERENCES User(UserID)
 );
+
+
+-- Create the FRIENDSHIP table
+CREATE TABLE Friendship (
+   friend_user1 INT,
+   friend_user2 INT,
+   status VARCHAR(20) NOT NULL,
+   request_sent_date TIMESTAMP NOT NULL,
+   request_answered_date TIMESTAMP,
+
+   PRIMARY KEY (friend_user1, friend_user2),
+   FOREIGN KEY (friend_user1) REFERENCES Users(UserID),
+   FOREIGN KEY (friend_user2) REFERENCES Users(UserID)
+);
+
+-- Create the FOLLOW table
+CREATE TABLE Follow (
+   follower_id INT,
+   following_id INT,
+   date_followed TIMESTAMP,
+
+   PRIMARY KEY (follower_id, following_id),
+   FOREIGN KEY (follower_id) REFERENCES Users(UserID),
+   FOREIGN KEY (following_id) REFERENCES Users(UserID)
+);
+
+-- Create the LIKE table
+CREATE TABLE Like(
+   like_user_id INT,
+   like_post_id INT,
+   like_timestamp TIMESTAMP,
+
+   PRIMARY KEY (like_user_id, like_post_id),
+   FOREIGN KEY (userid) REFERENCES Users(UserID),
+   FOREIGN KEY (postid) REFERENCES Posts(PostID)
+);
+
+-- CREATE the GROUPMEMBERSHIP table
+CREATE TABLE GroupMembership (
+   groupmembership_group_id INT,
+   groupmembership_user_id INT,
+   role VARCHAR(20),
+   date_joined TIMESTAMP,
+
+   PRIMARY KEY (groupmembership_group_id, groupmembership_user_id),
+   FOREIGN KEY (groupmembership_group_id) REFERENCES Group(GroupID),
+   FOREIGN KEY (groupmembership_user_id) REFERENCES User(UserID)
+);
