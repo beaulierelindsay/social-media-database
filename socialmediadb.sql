@@ -70,7 +70,7 @@ CREATE TABLE Notification (
 );
 
 -- Create the GROUP table
-CREATE TABLE Group (
+CREATE TABLE MediaGroup (
     GroupID INT PRIMARY KEY,
     CreatorID INT,
     group_name VARCHAR(20),
@@ -123,6 +123,6 @@ CREATE TABLE GroupMembership (
    date_joined TIMESTAMP,
 
    PRIMARY KEY (groupmembership_group_id, groupmembership_user_id),
-   FOREIGN KEY (groupmembership_group_id) REFERENCES Group(GroupID),
+   FOREIGN KEY (groupmembership_group_id) REFERENCES MediaGroup(GroupID),
    FOREIGN KEY (groupmembership_user_id) REFERENCES User(UserID)
 );
