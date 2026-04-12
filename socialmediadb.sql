@@ -12,7 +12,6 @@ CREATE TABLE User (
    DoB DATE,
    Phone VARCHAR(15),
    Email VARCHAR(100),
-   Password VARCHAR(255),
    DateJoined DATE,
    Location VARCHAR(50),
    PrivacySetting VARCHAR(10)
@@ -125,3 +124,13 @@ CREATE TABLE GroupMembership (
    FOREIGN KEY (groupmembership_group_id) REFERENCES MediaGroup(GroupID),
    FOREIGN KEY (groupmembership_user_id) REFERENCES User(UserID)
 );
+
+-- Insert data into the USER table
+INSERT INTO User (UserID, Username, DoB, Phone, Email, DateJoined, Location, PrivacySetting) VALUES
+(1, 'johndoe', '2000-03-20', '347-128-2983', 'johndoe@gmail.com', '2025-12-28', 'Singapore', 'private'),
+(2, 'janedoe', '2001-04-12', '646-128-2983', 'janedoe@gmail.com', '2026-02-05', 'United States', 'public'),
+(3, 'michellerocks123', '1999-05-27', '347-128-8000', 'michellerocks@gmail.com', '2023-12-28', 'United States', 'public'),
+(4, 'mattybdeng', '1998-07-12', '718-561-2999', 'mattdeng@gmail.com', '2019-09-18', 'United States', 'private'),
+(5, 'lindsaywowo', '1997-06-29', '347-432-1000', 'lindsaywow@gmail.com', '2017-10-05', 'United States', 'private');
+
+
