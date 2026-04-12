@@ -89,8 +89,8 @@ CREATE TABLE Friendship (
    request_answered_date TIMESTAMP,
 
    PRIMARY KEY (friend_user1, friend_user2),
-   FOREIGN KEY (friend_user1) REFERENCES Users(UserID),
-   FOREIGN KEY (friend_user2) REFERENCES Users(UserID)
+   FOREIGN KEY (friend_user1) REFERENCES User(UserID),
+   FOREIGN KEY (friend_user2) REFERENCES User(UserID)
 );
 
 -- Create the FOLLOW table
@@ -100,8 +100,8 @@ CREATE TABLE Follow (
    date_followed TIMESTAMP,
 
    PRIMARY KEY (follower_id, following_id),
-   FOREIGN KEY (follower_id) REFERENCES Users(UserID),
-   FOREIGN KEY (following_id) REFERENCES Users(UserID)
+   FOREIGN KEY (follower_id) REFERENCES User(UserID),
+   FOREIGN KEY (following_id) REFERENCES User(UserID)
 );
 
 -- Create the LIKE table
@@ -111,8 +111,8 @@ CREATE TABLE Like(
    like_timestamp TIMESTAMP,
 
    PRIMARY KEY (like_user_id, like_post_id),
-   FOREIGN KEY (userid) REFERENCES Users(UserID),
-   FOREIGN KEY (postid) REFERENCES Posts(PostID)
+   FOREIGN KEY (userid) REFERENCES User(UserID),
+   FOREIGN KEY (postid) REFERENCES Post(PostID)
 );
 
 -- CREATE the GROUPMEMBERSHIP table
