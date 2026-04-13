@@ -152,7 +152,7 @@ INSERT INTO Comment (CommentID, PostID, UserID, Content, CommentTimestamp) VALUE
 (5, 2, 4, 'fire fit', '2026-07-23 17:19:00');
 
 -- Insert into MESSAGE table
-INSERT INTO Message (MessageID, SenderID, ReceiverID, Content, Timestamp, read_status) VALUES
+INSERT INTO Message (MessageID, SenderID, ReceiverID, Content, MessageTimestamp, read_status) VALUES
 (1, 4, 5, 'Hello, how are you?', '2025-06-01 10:00:00', 'read'),
 (2, 5, 4, 'I am good, thanks! How about you?', '2025-06-01 10:05:00', 'read'),
 (3, 4, 5, 'I am doing well too. Thanks for asking!', '2025-06-01 10:10:00', 'unread'),
