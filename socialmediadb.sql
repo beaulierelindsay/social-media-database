@@ -174,3 +174,35 @@ INSERT INTO MediaGroup (GroupID, CreatorID, group_name, privacy_setting, date_cr
 (3, 3, 'Food Lovers', 'private', '2025-06-01 13:10:00'),
 (4, 4, 'Fitness Fanatics', 'public', '2025-06-01 13:15:00'),
 (5, 2, 'Movie Buffs', 'private', '2025-06-01 13:20:00');
+
+-- Insert into FRIENDSHIP table
+INSERT INTO Friendship (friend_user1, friend_user2, status, request_sent_date, request_answered_date) VALUES
+(1, 2, 'accepted', '2026-01-10 10:00:00', '2026-01-11 12:00:00'),
+(1, 3, 'pending', '2026-02-05 09:30:00', NULL),
+(2, 4, 'accepted', '2025-12-01 14:20:00', '2025-12-02 16:45:00'),
+(3, 5, 'declined', '2026-03-10 18:00:00', '2026-03-10 18:10:00'),
+(4, 5, 'accepted', '2025-11-20 08:15:00', '2025-11-21 09:00:00');
+
+-- Insert into FOLLOW table
+INSERT INTO Follow (follower_id, following_id, date_followed) VALUES
+(1, 2, '2026-01-12 10:00:00'),
+(2, 3, '2026-01-15 11:30:00'),
+(3, 1, '2026-02-01 09:00:00'),
+(4, 2, '2025-12-05 13:45:00'),
+(5, 4, '2025-11-25 17:20:00');
+
+-- Insert into LIKE table
+INSERT INTO Like (like_user_id, like_post_id, like_timestamp) VALUES
+(1, 2, '2026-07-23 12:10:00'),
+(2, 1, '2026-02-01 13:05:00'),
+(3, 4, '2026-03-22 00:15:00'),
+(4, 3, '2025-07-01 08:00:00'),
+(5, 2, '2026-07-23 12:20:00');
+
+-- Insert into GROUPMEMBERSHIP table
+INSERT INTO GroupMembership (groupmembership_group_id, groupmembership_user_id, role, date_joined) VALUES
+(1, 1, 'admin', '2025-06-01 13:05:00'),
+(2, 2, 'admin', '2025-06-01 13:10:00'),
+(3, 3, 'member', '2025-06-02 09:00:00'),
+(4, 4, 'admin', '2025-06-01 13:20:00'),
+(5, 5, 'member', '2025-06-03 15:30:00');
