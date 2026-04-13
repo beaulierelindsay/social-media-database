@@ -160,6 +160,12 @@ INSERT INTO Message (MessageID, SenderID, ReceiverID, Content, Timestamp, read_s
 (5, 2, 3, 'Yes, I will be there. Looking forward to it!', '2025-06-01 11:05:00', 'unread');
 
 -- Insert into NOTIFICATION table
+INSERT INTO Notification (NotificationID, UserID, RelatedPostID, RelatedMessageID, notification_type, Content, NotifTimestamp, read_status) VALUES
+(1, 5, 4, NULL, 'comment', 'michellerocks123 commented on your post: "i went to that place too"', '2026-04-01 20:10:00', 'unread'),
+(2, 4, NULL, 1, 'message', 'You have a new message from lindsaywowo: "I am good, thanks! How about you?"', '2025-06-01 10:05:00', 'read'),
+(3, 5, NULL, 3, 'message', 'You have a new message from mattybdeng: "I am doing well too. Thanks for asking!"', '2025-06-01 10:10:00', 'unread'),
+(4, 2, NULL, 4, 'message', 'You have a new message from michellerocks123: "Hey, are you coming to the party tonight?"', '2025-06-01 11:00:00', 'read'),
+(5, 3, NULL, 5, 'message', 'You have a new message from janedoe: "Yes, I will be there. Looking forward to it!"', '2025-06-01 11:05:00', 'unread');
 
 -- Insert into MEDIAGROUP table
 INSERT INTO MediaGroup (GroupID, CreatorID, group_name, privacy_setting, date_created) VALUES
