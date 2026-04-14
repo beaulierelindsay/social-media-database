@@ -165,7 +165,7 @@ INSERT INTO Notification (NotificationID, UserID, RelatedPostID, RelatedMessageI
 (2, 4, NULL, 1, 'message', 'You have a new message from lindsaywowo: "I am good, thanks! How about you?"', '2025-06-01 10:05:00', 'read'),
 (3, 5, NULL, 3, 'message', 'You have a new message from mattybdeng: "I am doing well too. Thanks for asking!"', '2025-06-01 10:10:00', 'unread'),
 (4, 2, NULL, 4, 'message', 'You have a new message from michellerocks123: "Hey, are you coming to the party tonight?"', '2025-06-01 11:00:00', 'read'),
-(5, 3, NULL, 5, 'message', 'You have a new message from janedoe: "Yes, I will be there. Looking forward to it!"', '2025-06-01 11:05:00', 'unread');
+(5, 2, 2, NULL, 'like', 'johndoe liked your post: "look at my cool fit"', '2026-07-23 12:08:00', 'unread');
 
 -- Insert into MEDIAGROUP table
 INSERT INTO MediaGroup (GroupID, CreatorID, group_name, privacy_setting, date_created) VALUES
