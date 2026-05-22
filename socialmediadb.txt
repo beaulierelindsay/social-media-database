@@ -228,3 +228,50 @@ SELECT * FROM Comment c
 JOIN Post p
 ON p.PostID = c.PostID
 WHERE PostID = "1";
+
+
+
+--  Retrieve all notifications for a user.
+SELECT
+   NotificationID,
+   notification_type,
+   Content,
+   NotifTimestamp,
+   read_status,
+   RelatedPostID,
+   RelatedMessageID,
+   RelatedCommentID
+FROM Notification
+WHERE UserID = 5;
+
+-- List all members of a particular group.
+SELECT
+   u.UserID,
+   u.Username,
+   gm.role
+FROM GroupMembership gm
+JOIN User u ON gm.groupmembership_user_id = u.UserID
+WHERE gm.groupmembership_group_id = 2;
+
+-- Find the most popular posts with a certain minimum number of likes.
+SELECT 
+   p.PostID,
+   p.PostCaption,
+   COUNT(*) AS like_count
+FROM Post p
+JOIN Like l ON p.PostID = l.like_post_id
+GROUP BY p.PostID, p.PostCaption
+HAVING like_count >= 50;
+
+-- Retrieve all posts tagged with a specific location.
+SELECT
+   p.PostID,
+   u.Username,
+   p.PostCaption,
+   p.MediaURL,
+   p.PostTimestamp,
+   p.Location,
+   p.Visibility
+FROM Post p
+JOIN User u ON p.UserID = u.UserID
+WHERE p.Location = 'China';
