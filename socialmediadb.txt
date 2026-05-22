@@ -212,16 +212,16 @@ INSERT INTO GroupMembership (groupmembership_group_id, groupmembership_user_id, 
 
 /* QUERIES */
 
--- Retrieve profile information for a specific user by username. (COMING BACK TO THIS)
+-- Retrieve profile information for a specific user by username.
 SELECT Username, DoB, Phone, Email, DateJoined
 FROM User
-WHERE Username = "XXXXXX";  -- replace with a specific username
+WHERE Username = "johndoe";  -- replace with a specific username
 
 -- List all posts created by a particular user.
 SELECT * FROM Post p
 JOIN User u
 ON u.UserID = p.UserID
-WHERE Username = "XXXXXX";  -- replace with a specific username
+WHERE Username = "johndoe";  -- replace with a specific username
 
 -- Get all comments on a specific post.
 SELECT * FROM Comment c
