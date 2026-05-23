@@ -227,9 +227,42 @@ WHERE Username = "johndoe";
 SELECT * FROM Comment c
 JOIN Post p
 ON p.PostID = c.PostID
-WHERE PostID = "1";
+WHERE p.PostID = 1;
 
+-- Count the number of likes on a particular post.
+SELECT COUNT(*) AS like_count
+FROM Post p
+JOIN Like l
+ON l.like_post_id = p.PostID
+WHERE p.PostID = 2;
 
+-- List all friends of a specific user.
+SELECT u2.*
+FROM Friendship f
+JOIN User u1
+ON u1.UserID = f.friend_user1
+JOIN User u2
+ON u2.UserID = f.friend_user2
+WHERE u1.Username = "janedoe" 
+AND f.status = "accepted"
+
+UNION
+
+SELECT u1.*
+FROM Friendship f
+JOIN User u1
+ON u1.UserID = f.friend_user1
+JOIN User u2
+ON u2.UserID = f.friend_user2
+WHERE u2.Username = "janedoe" 
+AND f.status = "accepted";
+
+-- Find all unread messages for a user.
+SELECT * FROM Message m
+JOIN User u
+ON u.userID = m.ReceiverID
+WHERE u.Username = "janedoe"
+AND m.read_status = "unread";
 
 --  Retrieve all notifications for a user.
 SELECT
