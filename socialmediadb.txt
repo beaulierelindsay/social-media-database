@@ -25,7 +25,7 @@ CREATE TABLE Post (
    MediaURL VARCHAR(255),
    PostTimestamp TIMESTAMP,
    Location VARCHAR(50),
-   Visibility VARCHAR(10),
+   Visibility VARCHAR(20),
    FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
 
@@ -76,7 +76,7 @@ CREATE TABLE MediaGroup (
     CreatorID INT,
     group_name VARCHAR(20),
     privacy_setting VARCHAR(10),
-    date_created DATE,
+    date_created TIMESTAMP,
     FOREIGN KEY (CreatorID) REFERENCES User(UserID)
 );
 
